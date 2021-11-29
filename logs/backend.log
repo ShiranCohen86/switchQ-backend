@@ -886,3 +886,6 @@
 30.11.2021, 0:36:55 - DEBUG - auth.service - login with phone: 0545919662 (sid: 912iUz6kYCdCkDQxqdwDkmoAOETtbtKe)
 30.11.2021, 0:37:06 - DEBUG - auth.service - signup with phone: 1, fullname: test (sid: 912iUz6kYCdCkDQxqdwDkmoAOETtbtKe)
 30.11.2021, 0:45:12 - INFO - Server is running on port: 3030 
+30.11.2021, 0:57:11 - DEBUG - auth.service - login with phone: 054 (sid: pqKk1O6UcGcSdI7XqcucbQKcW5iaK965)
+30.11.2021, 0:59:01 - DEBUG - auth.service - login with phone: 0545919662 (sid: 4Y39fShESOGHwyAMJBsX_uepvNuQo23L)
+30.11.2021, 1:00:34 - INFO - Server is running on port: 3030 
