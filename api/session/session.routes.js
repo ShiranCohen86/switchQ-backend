@@ -6,7 +6,6 @@ const {
 const {
   addSession,
   getSessions,
-  // getTransfersByContactEmail,
   setStartDate,
 } = require("./session.controller");
 const router = express.Router();
@@ -15,14 +14,7 @@ const router = express.Router();
 // router.use(requireAuth)
 
 router.get("/", getSessions);
-// router.get("/:email", getTransfersByContactEmail);
-
 router.post("/startDate", setStartDate);
 router.post("/", addSession);
 
-
-
 module.exports = router;
-
-
-

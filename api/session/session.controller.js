@@ -1,5 +1,4 @@
 const sessionService = require("./session.service");
-const socketService = require("../../services/socket.service");
 const logger = require("../../services/logger.service");
 
 async function addSession(req, res) {
@@ -43,21 +42,6 @@ async function getSessions(req, res) {
     res.status(500).send({ err: "Failed to update user" });
   }
 }
-
-// async function getTransfersByContactEmail(req, res) {
-//   try {
-//     const contactEmail = req.params.email;
-//     const loggedUserId = req.session.userId;
-//     const transfers = await transferService.getTransfersByContactEmail(
-//       contactEmail,
-//       loggedUserId
-//     );
-//     res.send(transfers);
-//   } catch (err) {
-//     logger.error("Failed to update user", err);
-//     res.status(500).send({ err: "Failed to update user" });
-//   }
-// }
 
 module.exports = {
   addSession,

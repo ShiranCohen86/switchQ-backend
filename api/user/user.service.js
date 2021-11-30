@@ -1,18 +1,13 @@
 const dbService = require("../../services/db.service");
 const logger = require("../../services/logger.service");
-// const contactService = require("../contact/contact.service");
 const ObjectId = require("mongodb").ObjectId;
 
 module.exports = {
   getEmployees,
   getById,
   getByPhone,
-  // remove,
   update,
   add,
-
-  // getHeaderDetails,
-  // getBalance,
 };
 
 async function getEmployees(loggedUserId) {
@@ -44,32 +39,6 @@ async function getById(userId) {
   }
 }
 
-// async function getHeaderDetails(userId) {
-//   try {
-//     const collection = await dbService.getCollection("user");
-//     const user = await collection.findOne({ _id: ObjectId(userId) });
-//     // const test = await collection.find(
-//     //   { _id: ObjectId(userId) }.project({ coins: 1, fullname: 1 })
-//     // );
-
-//     return { balance: user.coins, fullname: user.fullname };
-//   } catch (err) {
-//     logger.error(`while finding user ${userId}`, err);
-//     throw err;
-//   }
-// }
-// async function getBalance(userId) {
-//   try {
-//     const collection = await dbService.getCollection("user");
-//     const user = await collection.findOne({ _id: ObjectId(userId) });
-
-//     return user.coins;
-//   } catch (err) {
-//     logger.error(`while finding user ${userId}`, err);
-//     throw err;
-//   }
-// }
-
 async function getByPhone(phone) {
   try {
     const collection = await dbService.getCollection("user");
@@ -80,16 +49,6 @@ async function getByPhone(phone) {
     throw err;
   }
 }
-
-// async function remove(userId) {
-//   try {
-//     const collection = await dbService.getCollection("user");
-//     await collection.deleteOne({ _id: ObjectId(userId) });
-//   } catch (err) {
-//     logger.error(`cannot remove user ${userId}`, err);
-//     throw err;
-//   }
-// }
 
 async function update(user) {
   try {
@@ -123,22 +82,3 @@ async function add(user) {
     throw err;
   }
 }
-
-// function _buildCriteria(filterBy) {
-//   const criteria = {};
-//   if (filterBy.txt) {
-//     const txtCriteria = { $regex: filterBy.txt, $options: "i" };
-//     criteria.$or = [
-//       // {
-//       //   username: txtCriteria,
-//       // },
-//       {
-//         fullname: txtCriteria,
-//       },
-//     ];
-//   }
-//   if (filterBy.minBalance) {
-//     criteria.balance = { $gte: filterBy.minBalance };
-//   }
-//   return criteria;
-// }

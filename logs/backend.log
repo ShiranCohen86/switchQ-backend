@@ -889,3 +889,23 @@
 30.11.2021, 0:57:11 - DEBUG - auth.service - login with phone: 054 (sid: pqKk1O6UcGcSdI7XqcucbQKcW5iaK965)
 30.11.2021, 0:59:01 - DEBUG - auth.service - login with phone: 0545919662 (sid: 4Y39fShESOGHwyAMJBsX_uepvNuQo23L)
 30.11.2021, 1:00:34 - INFO - Server is running on port: 3030 
+30.11.2021, 1:55:24 - DEBUG - auth.service - login with phone: 0545919662 (sid: wB63JecEjsWWnWZPO4tuQot3aJuHogGk)
+30.11.2021, 2:00:56 - DEBUG - auth.service - login with phone: 054 (sid: Uas8I4AnU4fNEI_2fvb82agi78mxcMjf)
+30.11.2021, 2:22:15 - INFO - Server is running on port: 3030 
+30.11.2021, 2:22:55 - DEBUG - auth.service - login with phone: 054 (sid: gp86SEzTW0YrGu3Oz-1ZI9oyxQknAqBb)
+30.11.2021, 2:34:03 - INFO - Server is running on port: 3030 
+30.11.2021, 2:34:30 - INFO - Server is running on port: 3030 
+30.11.2021, 2:35:11 - INFO - Server is running on port: 3030 
+30.11.2021, 2:35:39 - INFO - Server is running on port: 3030 
+30.11.2021, 2:46:06 - INFO - Server is running on port: 3030 
+30.11.2021, 2:46:14 - DEBUG - auth.service - login with phone: 0545919662 (sid: hAAagqlyzM7R6weIE7PhODVDLKc4EI9E)
+30.11.2021, 2:46:42 - INFO - Server is running on port: 3030 
+30.11.2021, 2:47:07 - INFO - Server is running on port: 3030 
+30.11.2021, 2:47:23 - INFO - Server is running on port: 3030 
+30.11.2021, 2:47:29 - INFO - Server is running on port: 3030 
+30.11.2021, 2:48:07 - DEBUG - auth.service - login with phone: 054 (sid: gsDsInTYc0WE4fspjOjvM-si3uBtpc3y)
+30.11.2021, 2:49:08 - DEBUG - auth.service - login with phone: 0545919662 (sid: XDExNafeO5_HckY96OkAQ3XDueI_qKCf)
+30.11.2021, 2:49:19 - DEBUG - auth.service - login with phone: 054 (sid: U12IM8kl8A243pFit2fUitn3qnW0_Evh)
+30.11.2021, 2:50:10 - INFO - Server is running on port: 3030 
+30.11.2021, 2:50:12 - ERROR - cannot insert user | TypeError: Cannot read property 'sessionStartDate' of null (sid: bbLqmvmu2lnkHjjQE3YSj-FjKyX7tEGr)
+30.11.2021, 2:50:12 - ERROR - cannot insert user | TypeError: Cannot read property 'sessionStartDate' of null (sid: oqsHUGbmY9UDqW32nwJpJlTD-HNfHzke)

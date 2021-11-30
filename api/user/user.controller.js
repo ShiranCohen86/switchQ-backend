@@ -1,6 +1,5 @@
 const userService = require("./user.service");
 const authService = require("../auth/auth.service");
-const socketService = require("../../services/socket.service");
 const logger = require("../../services/logger.service");
 
 async function addEmployee(req, res) {
@@ -16,13 +15,7 @@ async function addEmployee(req, res) {
       phone,
       employerId
     );
-    // console.log("CTRL SessionId:", req.sessionID);
-    // socketService.broadcast({ type: "contact-added", data: contact });
-    // socketService.emitToAll({
-    //   type: "user-updated",
-    //   data: contact.byUser,
-    //   room: req.session.user._id,
-    // });
+
     res.send(updatedUser);
   } catch (err) {
     console.log(err);
@@ -40,6 +33,7 @@ async function getUser(req, res) {
     res.status(500).send({ err: "Failed to get user" });
   }
 }
+
 async function getEmployees(req, res) {
   try {
     const loggedInUserId = req.session.userId;
@@ -60,44 +54,6 @@ async function getLoggedInUser(req, res) {
   }
 }
 
-async function getUsers(req, res) {
-  try {
-    const filterBy = {
-      txt: req.query?.txt || "",
-    };
-    const users = await userService.query(filterBy);
-    res.send(users);
-  } catch (err) {
-    logger.error("Failed to get users", err);
-    res.status(500).send({ err: "Failed to get users" });
-  }
-}
-
-async function deleteUser(req, res) {
-  try {
-    await userService.remove(req.params.id);
-    res.send({ msg: "Deleted successfully" });
-  } catch (err) {
-    logger.error("Failed to delete user", err);
-    res.status(500).send({ err: "Failed to delete user" });
-  }
-}
-
-async function updateUser(req, res) {
-  try {
-    const user = req.body;
-    const savedUser = await userService.update(user);
-    res.send(savedUser);
-    // socketService.broadcast({
-    //   type: "user-updated",
-    //   data: review,
-    //   to: savedUser._id,
-    // });
-  } catch (err) {
-    logger.error("Failed to update user", err);
-    res.status(500).send({ err: "Failed to update user" });
-  }
-}
 async function isPhoneSigned(req, res) {
   try {
     const { phone } = req.params;
@@ -112,9 +68,6 @@ async function isPhoneSigned(req, res) {
 
 module.exports = {
   getUser,
-  getUsers,
-  deleteUser,
-  updateUser,
   getLoggedInUser,
   isPhoneSigned,
   addEmployee,

@@ -5,9 +5,7 @@ const {
 } = require("../../middlewares/requireAuth.middleware");
 const {
   getUser,
-  getUsers,
-  deleteUser,
-  updateUser,
+
   getLoggedInUser,
   isPhoneSigned,
   getEmployees,
@@ -18,15 +16,11 @@ const router = express.Router();
 // middleware that is specific to this router
 // router.use(requireAuth)
 
-router.get("/", getUsers);
 router.get("/loggedInUser", getLoggedInUser);
 router.get("/employees", getEmployees);
 router.get("/:phone", isPhoneSigned);
 router.get("/:id", getUser);
-router.put("/:id", updateUser);
-router.post("/addEmployee", addEmployee);
 
-// router.put('/:id',  requireAuth, updateUser)
-router.delete("/:id", requireAuth, requireAdmin, deleteUser);
+router.post("/addEmployee", addEmployee);
 
 module.exports = router;

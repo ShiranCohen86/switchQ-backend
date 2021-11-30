@@ -16,7 +16,6 @@ async function getSessions(loggedUserId) {
     const sessions = await collection
       .find({ userId: ObjectId(loggedUserId) })
       .toArray();
-    // console.log({ sessions });
 
     return sessions;
   } catch (err) {
@@ -24,48 +23,6 @@ async function getSessions(loggedUserId) {
     throw err;
   }
 }
-
-// async function getTransfersByContactEmail(contactEmail, loggedUserId) {
-//   // const criteria = _buildCriteria(filterBy);
-//   try {
-//     const transferCollection = await dbService.getCollection("transfer");
-
-//     const isUser = await userService.getByEmail(contactEmail);
-
-//     const transfers = await transferCollection
-//       .find({
-//         $or: [
-//           {
-//             from: ObjectId(loggedUserId),
-//             to: isUser._id,
-//           },
-//           {
-//             from: isUser._id,
-//             to: ObjectId(loggedUserId),
-//           },
-//         ],
-//       })
-//       .toArray();
-
-//     const transferToReturn = transfers.map((transfer) => {
-//       transfer.createdAt = ObjectId(transfer._id).getTimestamp();
-//       if (loggedUserId === transfer.from.toString()) {
-//         transfer.to = isUser.fullname;
-//         transfer.toImg = isUser.img;
-//         delete transfer.from;
-//       } else {
-//         transfer.from = isUser.fullname;
-//         transfer.fromImg = isUser.img;
-//         delete transfer.to;
-//       }
-//       return transfer;
-//     });
-//     return _sortByDate(transferToReturn);
-//   } catch (err) {
-//     logger.error("cannot find users", err);
-//     throw err;
-//   }
-// }
 
 async function addSession(startDate, loggedUserId, endDate) {
   try {
@@ -84,6 +41,7 @@ async function addSession(startDate, loggedUserId, endDate) {
     throw err;
   }
 }
+
 async function setStartDate(startDate, loggedUserId) {
   try {
     const updatedUser = await userService.getById(loggedUserId);
@@ -97,8 +55,3 @@ async function setStartDate(startDate, loggedUserId) {
   }
 }
 
-// const _sortByDate = (transfers) => {
-//   return transfers.sort((a, b) => {
-//     return a.createdAt > b.createdAt ? -1 : a.createdAt > b.createdAt ? 1 : 0;
-//   });
-// };
